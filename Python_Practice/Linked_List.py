@@ -126,7 +126,7 @@ print "List:"
 list.printList()
 print "Middle:"
 list.getMiddle()
-print "7th:"
-list.getN_start(7)
+print "8th:"
+list.getN_start(8)
 print "7th from End:"
 list.getN_end(7)
