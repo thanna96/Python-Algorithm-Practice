@@ -1,3 +1,4 @@
+#!/bin/bash
 '''
 Linked-List Practice
 =>Find the Nth node from the end of a LL
@@ -9,10 +10,11 @@ import random
 class Node:
     
     def __init__(self, value):
-            self.value = value  
+            self.value = value
             self.next = None
 
 class LinkedList:
+    
         'Initialize List'
         def __init__(self):
             self.head = None
@@ -37,7 +39,7 @@ class LinkedList:
             cur = self.head
             for x in range(n-1):
                 if(cur.next is None):
-                    print"Not enough elements"
+                    print("Not enough elements")
                     return
                 cur = cur.next
             new.next = cur.next
@@ -51,7 +53,7 @@ class LinkedList:
             'find the nth node'
             for x in range(n-1):
                 if(temp is None or temp.next is None):
-                    print"Node doesn't exist"
+                    print("Node doesn't exist")
                     return
                 prev = prev.next
                 temp = prev.next
@@ -60,16 +62,16 @@ class LinkedList:
             prev.next = temp.next
             temp = None
             
-        'Print List'
+        'print List'
         def printList(self):
             temp = self.head
             x = 0
             while(temp):
-                print x,temp.value
+                print( x, temp.value)
                 x = x + 1
                 temp = temp.next          
         
-        'Print Center Node'
+        'print Center Node'
         def getMiddle(self):
             temp_1 = self.head
             temp_2 = self.head
@@ -78,21 +80,21 @@ class LinkedList:
                 temp_1 = temp_1.next
                 temp_2 = temp_2.next.next
                 
-            print temp_1.value
+            print( temp_1.value)
             
-        'Print Nth node'
+        'print Nth node'
         def getN_start(self, n):
             temp = self.head
             
             for x in range(n):
                 if(temp.next is None):
-                    print"Not enough elements", x
+                    print("Not enough elements", x)
                     return
                 temp = temp.next
                 
-            print temp.value 
+            print( temp.value )
                 
-        'Print Nth from last node'
+        'print Nth from last node'
         def getN_end(self, n):
             temp = self.head
             slow = self.head
@@ -102,7 +104,7 @@ class LinkedList:
                 temp = temp.next
                 if(i > n):
                     slow = slow.next
-            print slow.value
+            print( slow.value)
 
 'Create Linked List with random values'
 list = LinkedList()
@@ -110,23 +112,23 @@ list = LinkedList()
 for x in range(0,10):
     list.push(random.randrange(1,20,1))
 
-print "List:"
+print( "List:")
 list.printList()
-print "remove node 5"
+print( "remove node 5")
 list.remove(5)
-print "List:"
+print( "List:")
 list.printList()
-print "Insert at end"
+print( "Insert at end")
 list.append(12)
-print "List:"
+print( "List:")
 list.printList()
-print "insert at index 5"
+print( "insert at index 5")
 list.insert(5, 99)
-print "List:"
+print( "List:")
 list.printList()
-print "Middle:"
+print( "Middle:")
 list.getMiddle()
-print "8th:"
+print( "8th:")
 list.getN_start(8)
-print "7th from End:"
-list.getN_end(7)
+print( "3rd from End:")
+list.getN_end(3)
