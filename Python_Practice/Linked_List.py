@@ -1,4 +1,3 @@
-#!/bin/bash
 '''
 Linked-List Practice
 =>Find the Nth node from the end of a LL
@@ -106,6 +105,18 @@ class LinkedList:
                     slow = slow.next
             print( slow.value)
 
+        'Reverse List'
+        def reverse(self):
+            prev = None
+            current = self.head
+            while(current):
+                fast = current.next
+                current.next = prev
+                prev = current
+                current = fast
+            self.head = prev
+
+
 'Create Linked List with random values'
 list = LinkedList()
 
@@ -132,3 +143,8 @@ print( "8th:")
 list.getN_start(8)
 print( "3rd from End:")
 list.getN_end(3)
+print( "List:")
+list.printList()
+print( "List Reversed:")
+list.reverse()
+list.printList()
