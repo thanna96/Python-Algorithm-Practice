@@ -85,8 +85,12 @@ array = []
 for x in range(0,10):
     array.append(random.randrange(1,20,1))
 #print array before and after to find missing values:
-print(array)
+#print(array)
 missing_elems(array)
 
+#Done without hash Table in ~O(n^2):
+for i in range(max(array)):
+    if i not in array:
+        print(i)
 
 
