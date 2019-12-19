@@ -16,8 +16,8 @@ def max_obj(cave, objects):
 		p = max(cave) - obj
 		for i,height in enumerate(cave):
 			if height is not None and p > obj - height 
-p = obj - height
-indP = i
+				p = obj - height
+				indP = i
 			if indP is not None and obj > height:
 				max += 1
 				height = None
